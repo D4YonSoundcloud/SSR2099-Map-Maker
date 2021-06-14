@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ export class MapStateService {
 
   mapState:number[] = []
 
+  setMapInputOpened:boolean = false;
 
   constructor() { }
 
@@ -32,5 +34,13 @@ export class MapStateService {
 
   getMapFromString(newMapState:string){
     this.mapState = JSON.parse(newMapState)
+  }
+
+  openMapInput(mapInputState:boolean){
+    this.setMapInputOpened = mapInputState;
+  }
+
+  closeMapInput(mapInputState:boolean){
+    this.setMapInputOpened = mapInputState;
   }
 }

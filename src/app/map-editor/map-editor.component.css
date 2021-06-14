@@ -11,3 +11,19 @@
   margin: 0;
   padding: 0;
 }
+
+@media only screen and (max-height: 1000px) and (max-width: 1200px)  {
+  .map-editor{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .map-tile-from-editor{
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+  }
+}

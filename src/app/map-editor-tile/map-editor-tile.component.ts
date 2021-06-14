@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from "@angular/core";
 import { AfterViewInit, ElementRef} from '@angular/core';
-import {MapStateService} from "../map-state.service";
-import {TileTypeService} from "../tile-type.service";
+import {MapStateService} from "../services/map-state.service";
+import {TileTypeService} from "../services/tile-type.service";
 
 @Component({
   selector: 'app-map-editor-tile',

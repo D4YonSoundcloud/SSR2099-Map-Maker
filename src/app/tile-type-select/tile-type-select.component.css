@@ -183,3 +183,177 @@
   width: 55%;
   cursor: pointer;
 }
+
+
+
+@media only screen and (max-height: 1079px) and (max-width: 1200px) {
+  .select-main-container{
+    height: 700px;
+    border-radius: 10px;
+    width: 350px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 48px;
+    box-shadow: 0 0 5px 3px #501177;
+  }
+
+  .tile-sprite-container{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0,0,0,0)
+  }
+  .tile-sprite{
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+  }
+
+  .tile-sprite-container-long{
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+    transform-origin: bottom;
+    transform: scaleY(2);
+    box-shadow: 0 0 1px 1px #501177;
+    background-color: #501177
+  }
+}
+
+@media only screen and (max-height: 600px) and (max-width: 1200px) {
+  .select-main-container{
+    height: 550px;
+    border-radius: 10px;
+    width: 350px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32px;
+    box-shadow: 0 0 5px 3px #501177;
+  }
+
+  .tile-sprite-container{
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0,0,0,0)
+  }
+  .tile-sprite{
+    width: 25px;
+    height: 25px;
+    background-size: 100% 100%;
+  }
+
+  .tile-sprite-container-long{
+    width: 25px;
+    height: 25px;
+    background-size: 100% 100%;
+    transform-origin: bottom;
+    transform: scaleY(2);
+    box-shadow: 0 0 1px 1px #501177;
+    background-color: #501177
+  }
+
+  .tile-select{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 10%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 8px;
+    box-shadow: 0 0 1px 1px #501177;
+    transition: 0.2s ease;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+
+  .tile-select-current{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 15%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    box-shadow: 0 0 3px 5px #501177;
+    transition: 0.2s ease;
+    border-radius: 1px;
+  }
+
+  .map-copy-button{
+    height: 5%;
+    width: 50%;
+    font-size: 1.25em;
+    outline: none;
+    color: whitesmoke;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #501177;
+    border: none;
+    box-shadow: 0 0 1px 1px #501177;
+    margin-top: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .map-copy-button:hover{
+    box-shadow: 0 0 20px 1px #501177;
+    height: 5.5%;
+    width: 55%;
+    cursor: pointer;
+  }
+
+  .map-reset-button{
+    height: 25%;
+    width: 50%;
+    font-size: 1.25em;
+    outline: none;
+    color: whitesmoke;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #501177;
+    border: none;
+    box-shadow: 0 0 1px 1px #501177;
+    margin-top: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .map-reset-button:hover{
+    box-shadow: 0 0 20px 1px #501177;
+    height: 32.5%;
+    width: 55%;
+    cursor: pointer;
+  }
+
+  .copy-text-area{
+    display: none;
+  }
+
+  .map-set-button{
+    height: 5%;
+    width: 50%;
+    font-size: 1.25em;
+    outline: none;
+    color: whitesmoke;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #501177;
+    border: none;
+    box-shadow: 0 0 1px 1px #501177;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .map-set-button:hover{
+    box-shadow: 0 0 20px 1px #501177;
+    height: 5.5%;
+    width: 55%;
+    cursor: pointer;
+  }
+}

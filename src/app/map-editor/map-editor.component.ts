@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TileTypeService} from "../tile-type.service";
-import { MapStateService } from "../map-state.service";
+import { TileTypeService} from "../services/tile-type.service";
+import { MapStateService } from "../services/map-state.service";
 
 @Component({
   selector: 'app-map-editor',
