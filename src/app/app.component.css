@@ -1,0 +1,15 @@
+.main-body-container{
+  height: 100vh;
+  width: 100vw;
+  background-color: #0f011f;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

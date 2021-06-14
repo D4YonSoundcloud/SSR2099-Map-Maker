@@ -1,0 +1,13 @@
+.map-editor{
+  height:750px;
+  width: 750px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.map-tile-from-editor{
+  height: 75px;
+  width: 75px;
+  margin: 0;
+  padding: 0;
+}

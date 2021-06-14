@@ -1,0 +1,24 @@
+<div class="select-main-container">
+  <div class="select-title-container">
+    <p class="selected-p">Current Tile</p>
+    <h1 class="select-title">{{tileSelectionTypeLookUpTable[tileType.tileType]}}</h1>
+  </div>
+  <div class="tile-selection-container">
+
+    <div *ngFor="let tile of tileSelection; index as i"
+         (click)="tileType.changeTileType(tileSelectionType[i])"
+         [class]="tileSelectionType[i] === tileType.tileType ? 'tile-select-current' : 'tile-select'">
+
+      <div class="tile-sprite-container">
+        <div class="tile-sprite" [style.background-image]="tileSelectionSpriteUrls[i]"></div>
+      </div>
+      <div class="tile-title">
+        <p class="tile-title-p">{{tile}}</p>
+      </div>
+    </div>
+
+    <button class="map-copy-button" style="vertical-align:top;">COPY MAP</button>
+    <textarea class="copy-text-area"></textarea>
+
+  </div>
+</div>

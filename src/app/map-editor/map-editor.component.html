@@ -1,0 +1,6 @@
+<div class="map-editor">
+  <app-map-editor-tile *ngFor="let tile of mapEditorState; index as i"
+                       [class]="( tile === 25 || tile === 27 ) ? 'map-tile-from-editor' : 'map-tile-from-editor'"
+                       [tileType]="tile" [tileIndex]="i" (click)="changeMapTile(i, tileType.tileType)">
+  </app-map-editor-tile>
+</div>

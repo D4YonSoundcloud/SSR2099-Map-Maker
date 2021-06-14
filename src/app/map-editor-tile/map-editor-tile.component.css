@@ -1,0 +1,21 @@
+.map-tile{
+  height: 75px;
+  width: 75px;
+  background-color: #501177;
+  margin: 0;
+  padding: 0;
+}
+
+.tile{
+  background-size: 100%;
+  width: 75px;
+  height: 75px;
+}
+
+.tile-long{
+  background-size: 100% 100%;
+  transform-origin: bottom;
+  width: 75px;
+  height: 75px;
+  transform: scaleY(2);
+}
