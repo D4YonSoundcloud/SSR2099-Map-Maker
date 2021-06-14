@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TileTypeService} from "../tile-type.service";
+import { MapStateService } from "../map-state.service";
 
 @Component({
   selector: 'app-map-editor',
@@ -21,9 +22,10 @@ export class MapEditorComponent implements OnInit {
     0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
   ]
 
-  constructor(public tileType: TileTypeService) { }
+  constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }
 
   ngOnInit(): void {
+    this.mapGlobalState.setMapState(this.mapEditorState)
   }
 
   /**
@@ -31,11 +33,20 @@ export class MapEditorComponent implements OnInit {
    * the tileType chosen is the same as the tileType of the clicked tile
    */
   changeMapTile(tileIndexToChange:number, newTileType:number):void {
+
     if(this.mapEditorState[tileIndexToChange] === newTileType){
+
+      //set the map editor state and then set the global map state, so we can easily copy it to clipboard
       this.mapEditorState[tileIndexToChange] = 0;
+      this.mapGlobalState.setMapState(this.mapEditorState)
+
     } else {
+
       this.mapEditorState[tileIndexToChange] = newTileType;
+      this.mapGlobalState.setMapState(this.mapEditorState)
+
     }
+
   }
 
 }

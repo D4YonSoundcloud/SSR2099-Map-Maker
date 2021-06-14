@@ -2,6 +2,7 @@
   <div class="select-title-container">
     <p class="selected-p">Current Tile</p>
     <h1 class="select-title">{{tileSelectionTypeLookUpTable[tileType.tileType]}}</h1>
+    <button (click)="resetMap()" class="map-reset-button" style="vertical-align:top;">RESET MAP</button>
   </div>
   <div class="tile-selection-container">
 
@@ -17,8 +18,6 @@
       </div>
     </div>
 
-    <button class="map-copy-button" style="vertical-align:top;">COPY MAP</button>
-    <textarea class="copy-text-area"></textarea>
-
+    <button (click)="copyToClipBoard(mapGlobalState.mapState)" class="map-copy-button" style="vertical-align:top;">COPY MAP</button>
   </div>
 </div>

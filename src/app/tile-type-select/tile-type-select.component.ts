@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TileTypeService } from "../tile-type.service";
+import {MapStateService} from "../map-state.service";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-tile-type-select',
@@ -40,10 +42,46 @@ export class TileTypeSelectComponent implements OnInit {
     'url(../../assets/tiles/TIME-TRIAL-FINISH-sprite.png)'
   ]
 
-  constructor(public tileType: TileTypeService) { }
+  constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }
 
   ngOnInit(): void {
     console.log(this.tileType.tileType)
+  }
+
+  copyToClipBoard(mapState:number[]){
+    let text = JSON.stringify(mapState);
+    let input = document.createElement('textarea');
+
+    console.log(text)
+
+    input.innerHTML = text;
+    document.body.appendChild(input);
+    input.select();
+    let result = document.execCommand('copy');
+    document.body.removeChild(input);
+
+    alert('Map copied to clip-board! Send it over to D4Y')
+
+    return result;
+  }
+
+  resetMap(){
+    this.mapGlobalState.setMapState(
+      [
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+        0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
+      ]
+    )
+
+    console.log('map reset!', this.mapGlobalState.mapState)
   }
 
 }

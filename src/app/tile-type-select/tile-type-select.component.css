@@ -30,7 +30,7 @@
   width: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
@@ -114,10 +114,43 @@
 }
 
 .map-copy-button{
+  height: 5%;
+  width: 50%;
+  font-size: 1.25em;
   outline: none;
   color: whitesmoke;
   font-family: 'Orbitron', sans-serif;
   background-color: #501177;
+  border: none;
+  box-shadow: 0 0 1px 1px #501177;
+  margin-top: 24px;
+  transition: 0.2s;
+}
+
+.map-copy-button:hover{
+  box-shadow: 0 0 20px 1px #501177;
+  height: 5.5%;
+  width: 55%;
+}
+
+.map-reset-button{
+  height: 25%;
+  width: 50%;
+  font-size: 1.25em;
+  outline: none;
+  color: whitesmoke;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #501177;
+  border: none;
+  box-shadow: 0 0 1px 1px #501177;
+  margin-top: 16px;
+  transition: 0.2s;
+}
+
+.map-reset-button:hover{
+  box-shadow: 0 0 20px 1px #501177;
+  height: 32.5%;
+  width: 55%;
 }
 
 .copy-text-area{

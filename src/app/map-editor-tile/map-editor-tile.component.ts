@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from "@angular/core";
+import { AfterViewInit, ElementRef} from '@angular/core';
+import {MapStateService} from "../map-state.service";
+import {TileTypeService} from "../tile-type.service";
 
 @Component({
   selector: 'app-map-editor-tile',
@@ -12,6 +15,9 @@ export class MapEditorTileComponent implements OnInit {
 
   cssTileStyle: { [index: string]: string } = {};
 
+  mouseEntered:boolean = false;
+  mouseCoolDown:boolean = false;
+
   //declare the index type for the object
   tileSpriteLookUpTable:{[index: number]: string} = {
     0: 'url(../../assets/tiles/background-tile.png)',
@@ -22,7 +28,7 @@ export class MapEditorTileComponent implements OnInit {
     99: 'url(../../assets/tiles/TIME-TRIAL-FINISH-sprite.png)',
   }
 
-  constructor() { }
+  constructor(private elementRef:ElementRef, public mapGlobalState: MapStateService, public globalTileType: TileTypeService) { }
 
   ngOnInit(): void {
     this.cssTileStyle = {
@@ -30,4 +36,45 @@ export class MapEditorTileComponent implements OnInit {
     }
     console.log(this.cssTileStyle, this.tileType, this.tileIndex, this.tileSpriteLookUpTable[this.tileType])
   }
+
+  ngAfterViewInit(): void {
+    this.elementRef.nativeElement.querySelector(this.findTileClassName()).addEventListener('mouseenter', (e:any) => {
+      if(!this.mouseEntered) {
+        this.mouseEntered = true;
+      }
+
+      console.log(this.mouseEntered)
+    });
+
+    this.elementRef.nativeElement.querySelector(this.findTileClassName()).addEventListener('mousedown', (e:any) => {
+      console.log(this.mouseCoolDown, this.tileIndex)
+
+      if(this.mouseCoolDown) return;
+
+      if (this.tileIndex != null) {
+        if(this.mouseEntered) {
+
+          this.mapGlobalState.changeMapTile(this.tileIndex, this.globalTileType.tileType)
+          this.mouseCoolDown = true;
+          this.startMouseCoolDown()
+
+          console.log('we have changed the tile')
+        }
+      }
+    });
+
+    console.log('we have added the mouseenter and mousedown event listener')
+  }
+
+  findTileClassName(): string {
+    return (this.tileType === 25 || this.tileType === 27) ? '.tile-long' : '.tile'
+  }
+
+  startMouseCoolDown(){
+    setTimeout(() => {
+      this.mouseEntered = false
+      this.mouseCoolDown = false;
+    }, 500)
+  }
+
 }
