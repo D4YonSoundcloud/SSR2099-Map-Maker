@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MapStateService} from "../services/map-state.service";
 
 @Component({
   selector: 'app-set-map-input',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetMapInputComponent implements OnInit {
 
-  constructor() { }
+  newMapString:string = '';
+
+  constructor(public mapGlobalState: MapStateService) { }
 
   ngOnInit(): void {
+  }
+
+  setNewMap(newMap:string) {
+    console.log(newMap);
+    this.mapGlobalState.getMapFromString(newMap)
+    this.mapGlobalState.closeMapInput(false);
   }
 
 }

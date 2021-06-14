@@ -1,0 +1,94 @@
+.main-map-input-container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -150px;
+  height: 300px;
+  width: 500px;
+  box-shadow: 0 0 1px 1px #501177;
+  background-color: #0f011f;
+  border-radius: 2px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px 16px;
+}
+
+.set-map-textarea{
+  background-color: #0a0015;
+  outline: none;
+  border: none;
+  color: white;
+  width: 95%;
+  height: 95%;
+  border-radius: 4px;
+  box-shadow: inset 0 0 14px 1px #290142;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.main-map-input{
+  height: 85%;
+  width: 95%;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  background-color: #0f011f;
+  align-items: center;
+}
+
+.main-map-button-container{
+  height: 15%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+}
+
+.set-map-button{
+  height: 65%;
+  width: 35%;
+  font-size: 1.25em;
+  outline: none;
+  color: whitesmoke;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #501177;
+  border: none;
+  box-shadow: 0 0 1px 1px #501177;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.set-map-back-button{
+  height: 65%;
+  width: 10%;
+  font-size: 1.25em;
+  outline: none;
+  color: whitesmoke;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #501177;
+  border: none;
+  box-shadow: 0 0 1px 1px #501177;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.set-map-button:hover{
+  box-shadow: 0 0 20px 1px #501177;
+  height: 70%;
+  width: 37.5%;
+  cursor: pointer;
+}
+
+.set-map-back-button:hover{
+  box-shadow: 0 0 20px 1px #501177;
+  height: 70%;
+  width: 12.5%;
+  cursor: pointer;
+}
+
+

@@ -66,10 +66,11 @@ export class TileTypeSelectComponent implements OnInit {
   }
 
   async setCustomMap(){
-    let customMap = await prompt('Set Custom Map (ex: [0,0,0...]')
-
-    if(customMap){
-      this.mapGlobalState.getMapFromString(customMap)
+    if(this.mapGlobalState.setMapInputOpened){
+      return console.log('its already open')
+    } else {
+      console.log('opening map input')
+      this.mapGlobalState.openMapInput(true)
     }
   }
 

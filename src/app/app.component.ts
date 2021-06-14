@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {TileTypeService} from "./services/tile-type.service";
+import {MapStateService} from "./services/map-state.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SSR2099mapMaker';
+
+  constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }
 }

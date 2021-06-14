@@ -1,1 +1,12 @@
-<p>set-map-input works!</p>
+<div class="main-map-input-container">
+  <div class="main-map-input">
+    <textarea
+      [(ngModel)]="newMapString"
+      name=""
+      id="set-map-textarea" cols="30" rows="30" class="set-map-textarea"></textarea>
+  </div>
+  <div class="main-map-button-container">
+    <button (click)="mapGlobalState.closeMapInput(false)" class="set-map-back-button"><-</button>
+    <button (click)="setNewMap(newMapString)" class="set-map-button">SET MAP</button>
+  </div>
+</div>
