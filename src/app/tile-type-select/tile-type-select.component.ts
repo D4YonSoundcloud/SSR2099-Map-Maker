@@ -65,6 +65,14 @@ export class TileTypeSelectComponent implements OnInit {
     return result;
   }
 
+  async setCustomMap(){
+    let customMap = await prompt('Set Custom Map (ex: [0,0,0...]')
+
+    if(customMap){
+      this.mapGlobalState.getMapFromString(customMap)
+    }
+  }
+
   resetMap(){
     this.mapGlobalState.setMapState(
       [

@@ -22,6 +22,9 @@ export class MapEditorComponent implements OnInit {
     0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
   ]
 
+  // mapEditorState:number[] = [0,0,26,26,0,26,0,0,0,26,26,0,0,26,0,0,0,26,0,26,0,26,0,0,26,26,26,26,0,0,0,0,26,0,26,26,26,26,26,26,26,0,26,0,1,26,0,99,0,26,0,0,26,26,26,26,0,26,0,26,0,26,26,0,0,0,0,26,0,26,0,0,26,0,26,26,26,26,0,26,26,0,26,0,26,0,0,0,0,26,0,0,26,0,0,0,26,26,26,26]
+
+
   constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }
 
   ngOnInit(): void {
