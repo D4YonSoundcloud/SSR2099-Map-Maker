@@ -7,14 +7,16 @@ import { MapEditorComponent } from './map-editor/map-editor.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MapEditorTileComponent } from './map-editor-tile/map-editor-tile.component'
+import {SetMapInputComponent} from "./set-map-input/set-map-input.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TileTypeSelectComponent,
-    MapEditorComponent,
-    MapEditorTileComponent
-  ],
+    declarations: [
+        AppComponent,
+        TileTypeSelectComponent,
+        MapEditorComponent,
+        MapEditorTileComponent,
+        SetMapInputComponent
+    ],
   imports: [
     BrowserModule,
     FormsModule,

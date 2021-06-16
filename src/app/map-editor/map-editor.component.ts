@@ -9,7 +9,7 @@ import { MapStateService } from "../services/map-state.service";
 })
 export class MapEditorComponent implements OnInit {
 
-  mapEditorState:number[] = [
+  mapEditorState:(number | { start: number,end: number,color: string,value: number })[] = [
     0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
     0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
     0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
@@ -50,6 +50,11 @@ export class MapEditorComponent implements OnInit {
 
     }
 
+  }
+
+  checkIfObject(tile:(number| { start: number,end: number,color: string,value: number })){
+    console.log(typeof tile === 'object' && tile !== null)
+    return typeof tile === 'object' && tile !== null
   }
 
 }

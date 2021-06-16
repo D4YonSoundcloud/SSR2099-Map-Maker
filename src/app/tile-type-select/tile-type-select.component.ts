@@ -14,6 +14,7 @@ export class TileTypeSelectComponent implements OnInit {
     'Wall Small',
     'Wall Normal',
     'Wall Edge',
+    'Portal',
     'Character',
     'Finish Flag'
   ]
@@ -22,6 +23,7 @@ export class TileTypeSelectComponent implements OnInit {
     26,
     25,
     27,
+    50,
     1,
     99
   ]
@@ -30,6 +32,7 @@ export class TileTypeSelectComponent implements OnInit {
     26: 'Wall Small',
     25: 'Wall Normal',
     27: 'Wall Edge',
+    50: 'Portal',
     1: 'Character',
     99: 'Finish Flag',
   }
@@ -38,6 +41,7 @@ export class TileTypeSelectComponent implements OnInit {
     'url(../../assets/tiles/WALL-TILE-small-half.png)',
     'url(../../assets/tiles/WALL-TILE.png)',
     'url(../../assets/tiles/WALL-TILE-small-top.png)',
+    'url(../../assets/tiles/portal-tile-1.png)',
     'url(../../assets/tiles/D4Y-idle-sprite-export.png)',
     'url(../../assets/tiles/TIME-TRIAL-FINISH-sprite.png)'
   ]
@@ -48,7 +52,7 @@ export class TileTypeSelectComponent implements OnInit {
     console.log(this.tileType.tileType)
   }
 
-  copyToClipBoard(mapState:number[]){
+  copyToClipBoard(mapState:(number | { start: number,end: number,color: string,value: number })[]){
     let text = JSON.stringify(mapState);
     let input = document.createElement('textarea');
 
@@ -93,4 +97,7 @@ export class TileTypeSelectComponent implements OnInit {
     console.log('map reset!', this.mapGlobalState.mapState)
   }
 
+  checkIfObject(tile:(number| { start: number,end: number,color: string,value: number })){
+    return typeof tile === 'object' && tile !== null
+  }
 }
