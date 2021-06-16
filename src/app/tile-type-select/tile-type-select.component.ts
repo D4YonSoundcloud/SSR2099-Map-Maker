@@ -46,6 +46,17 @@ export class TileTypeSelectComponent implements OnInit {
     'url(../../assets/tiles/TIME-TRIAL-FINISH-sprite.png)'
   ]
 
+  portalColorsSelection:string[] = [
+    'purple',
+    'blue',
+    'green',
+    'yellow',
+    'orange',
+    'red',
+    'aqua',
+    'lightpurple',
+  ]
+
   constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }
 
   ngOnInit(): void {

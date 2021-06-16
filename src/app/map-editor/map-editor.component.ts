@@ -28,6 +28,7 @@ export class MapEditorComponent implements OnInit {
   constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }
 
   ngOnInit(): void {
+    console.log('setting the mapState')
     this.mapGlobalState.setMapState(this.mapEditorState)
   }
 
@@ -53,7 +54,6 @@ export class MapEditorComponent implements OnInit {
   }
 
   checkIfObject(tile:(number| { start: number,end: number,color: string,value: number })){
-    console.log(typeof tile === 'object' && tile !== null)
     return typeof tile === 'object' && tile !== null
   }
 

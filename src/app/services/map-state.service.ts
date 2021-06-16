@@ -27,46 +27,42 @@ export class MapStateService {
     console.log(this.globalTileType, tileIndexToChange, newTileType)
 
     if(this.checkIfObject(newTileType)) {
-      console.log(this.globalTileType)
-      if(this.globalTileType.tileType.start === null){
+
+      if (this.globalTileType.tileType.start === null) {
         console.log('this is being called')
-        this.globalTileType.setPortalStart(tileIndexToChange)
-        setTimeout(() => {
-          if(this.globalTileType.tileType.end){
-            return this.globalTileType.changeTileType(26)
-          }
-        }, 200)
+        this.globalTileType.setPortalStart(tileIndexToChange).then(() => {
+          console.log('then is being called')
+          setTimeout(() => {
+            if (this.globalTileType.tileType.end) {
+              console.log('resetting tileType')
+              return this.globalTileType.changeTileType(26)
+            }
+          }, 200)
+        })
+
       } else if (this.globalTileType.tileType.end === null) {
-        this.globalTileType.setPortalEnd(tileIndexToChange)
-        setTimeout(() => {
-          if (this.globalTileType.tileType.start) {
-            console.log('we are switching')
-            return this.globalTileType.changeTileType(26)
-          }
-        }, 200)
 
+        this.globalTileType.setPortalEnd(tileIndexToChange).then(() => {
+          console.log('then is being called')
+          setTimeout(() => {
+            if (this.globalTileType.tileType.start) {
+              console.log('resetting tileType')
+              return this.globalTileType.changeTileType(26)
+            }
+          }, 200)
+        })
       }
-      /**
-       * need to find a way to edit placed portals
-       */
-      // } else if (this.globalTileType.tileType.start !== null && this.globalTileType.tileType.end !== null) {
-      //   if(this.globalTileType.tileType.start === tileIndexToChange){
-      //     this.mapState[tileIndexToChange] = 0;
-      //     if(this.globalTileType.tileType.end){
-      //       return this.globalTileType.changeTileType(26)
-      //     }
-      //   } else if (this.globalTileType.tileType.end === tileIndexToChange) {
-      //     this.mapState[tileIndexToChange] = 0
-      //   }
-      // }
     }
-
+    /**
+     * need to find a way to edit placed portals
+     */
     if(this.mapState[tileIndexToChange] === newTileType){
       this.mapState[tileIndexToChange] = 0;
     } else {
       this.mapState[tileIndexToChange] = newTileType;
     }
 
+    console.log(this.mapState)
   }
 
   getMapFromString(newMapState:string){
@@ -82,7 +78,6 @@ export class MapStateService {
   }
 
   checkIfObject(tile:(number| { start: number,end: number,color: string,value: number })){
-    console.log(typeof tile === 'object' && tile !== null)
     return typeof tile === 'object' && tile !== null
   }
 }

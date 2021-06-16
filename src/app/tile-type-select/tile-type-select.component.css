@@ -8,6 +8,7 @@
   align-items: center;
   margin-right: 48px;
   box-shadow: 0 0 5px 3px #501177;
+  position:relative;
 }
 
 .select-title-container{
@@ -182,6 +183,31 @@
   height: 5.5%;
   width: 55%;
   cursor: pointer;
+}
+
+.portal-color-select{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  padding-top: 16px;
+  align-items: center;
+  width: 65px;
+  height: 550px;
+  position: absolute;
+  top: 5%;
+  left: 101%;
+  box-shadow: 1px 0 1px 1px #501177;
+  transition: 0.2s ease;
+  border-radius: 1px;
+  padding-left: 9px;
+  padding-right: 8px;
+  background-color: #0f011f;
+}
+
+.portal-select-tile{
+  height: 50px;
+  width: 50px;
+  border-radius: 1px;
 }
 
 

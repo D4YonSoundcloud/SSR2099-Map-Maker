@@ -12,6 +12,7 @@ import {TileTypeService} from "../services/tile-type.service";
 export class MapEditorTileComponent implements OnInit {
   @Input() tileType:(number|any) = 0;
   @Input() tileIndex:number | undefined
+  @Input() tileColor:string = 'white';
 
   cssTileStyle: { [index: string]: string } = {};
 
@@ -32,7 +33,12 @@ export class MapEditorTileComponent implements OnInit {
   hueDegreesLookUpTable:{[index:string]: number} = {
     'purple': 260,
     'green': 50,
+    'lightpurple': 190,
     'blue': 130,
+    'yellow': 0,
+    'aqua': 80,
+    'orange': 300,
+    'red': 295,
   }
 
   constructor(private elementRef:ElementRef, public mapGlobalState: MapStateService, public globalTileType: TileTypeService) { }
@@ -76,7 +82,15 @@ export class MapEditorTileComponent implements OnInit {
   }
 
   checkIfObject(tile:(number | { start: number,end: number,color: string,value: number })){
-    console.log(typeof tile === 'object' && tile !== null)
     return typeof tile === 'object' && tile !== null
+  }
+
+  getPortalColor(color:string|null){
+    if(color !== null){
+      console.log(color)
+      return 'sepia() saturate(1000%) hue-rotate(' + this.hueDegreesLookUpTable[color] + 'deg)'
+    } else {
+      return '';
+    }
   }
 }

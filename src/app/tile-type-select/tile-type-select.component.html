@@ -17,8 +17,12 @@
         <p class="tile-title-p">{{tile}}</p>
       </div>
     </div>
-
     <button (click)="copyToClipBoard(mapGlobalState.mapState)" class="map-copy-button" style="vertical-align:top;">COPY MAP</button>
     <button (click)="setCustomMap()" class="map-set-button" style="vertical-align:top;">SET MAP</button>
+  </div>
+  <div *ngIf="(tileType.showPortalColorSelect === true)" class="portal-color-select">
+    <div class="portal-select-tile" *ngFor="let color of portalColorsSelection" (click)="tileType.changePortalColor(color)"
+         [style.background-color]="color">
+    </div>
   </div>
 </div>

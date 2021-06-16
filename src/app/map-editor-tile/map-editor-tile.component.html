@@ -1,7 +1,7 @@
 <div class="map-tile">
   <div
     [class]="( tileType === 25 || tileType === 27 ) ? 'tile-long' : 'tile'"
-    [style.filter]="'sepia() saturate(1000%) hue-rotate(' + hueDegreesLookUpTable[tileType.color] + 'deg)'"
+    [style.filter]="getPortalColor(tileColor)"
     [style.background-image]="tileSpriteLookUpTable[tileType]">
 
   </div>
