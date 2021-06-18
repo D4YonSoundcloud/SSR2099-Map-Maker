@@ -12,8 +12,8 @@ export class TileTypeService {
   newColor:string = '';
 
   changeTileType(newTileType:number|any):boolean|void {
-    if(newTileType === 50){
-      if(this.newColor === ''){
+    if(newTileType === 50) {
+      if (this.newColor === '') {
         console.log('there is no color')
         return this.openPortalColorSelect(true)
       } else {
@@ -32,18 +32,15 @@ export class TileTypeService {
         this.newColor = '';
         console.log(this.portalsArray, this.portalsArrayCurrentIndex, this.newColor, this.showPortalColorSelect)
       }
-
-      this.tileType = newTileType;
-      console.log(this.tileType, newTileType);
-      }
+    }
+    this.tileType = newTileType;
+    console.log(this.tileType, newTileType);
   }
 
   public changePortalColor(color:string){
     this.newColor = color;
     console.log(this.newColor)
-    setTimeout(() => {
-      this.changeTileType(50);
-    }, 500)
+    this.changeTileType(50);
   }
 
   public async setPortalStart(start:number){

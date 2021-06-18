@@ -54,7 +54,7 @@ export class TileTypeSelectComponent implements OnInit {
     'orange',
     'red',
     'aqua',
-    'lightpurple',
+    'plum',
   ]
 
   constructor(public tileType: TileTypeService, public mapGlobalState: MapStateService) { }

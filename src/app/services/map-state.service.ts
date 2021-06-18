@@ -32,24 +32,20 @@ export class MapStateService {
         console.log('this is being called')
         this.globalTileType.setPortalStart(tileIndexToChange).then(() => {
           console.log('then is being called')
-          setTimeout(() => {
             if (this.globalTileType.tileType.end) {
               console.log('resetting tileType')
               return this.globalTileType.changeTileType(26)
             }
-          }, 200)
         })
 
       } else if (this.globalTileType.tileType.end === null) {
 
         this.globalTileType.setPortalEnd(tileIndexToChange).then(() => {
           console.log('then is being called')
-          setTimeout(() => {
             if (this.globalTileType.tileType.start) {
               console.log('resetting tileType')
               return this.globalTileType.changeTileType(26)
             }
-          }, 200)
         })
       }
     }
